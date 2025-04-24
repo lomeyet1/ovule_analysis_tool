@@ -1,0 +1,249 @@
+{
+    "no_new_parameters_needed": false,
+    "2D analysis": [
+        {
+            "category_name": "2D analysis",
+            "button_name": "chalaza simulation mash measurement",
+            "carrier_path": "python",
+            "script_path": "./2D_chalaza_simulation_mash(.ply)_measure-python/chalaza_simulation_mash_measure.py",
+            "use_global_command": true,
+            "feedback": "data and images saved in your input folder/simulation_mash_kink_angle_measure",
+            "parameters": [
+                {
+                    "flag": "",
+                    "value": "./2D_chalaza_simulation_mash(.ply)_measure-python/ply_files",
+                    "description": "input folder conatins .ply file (if they are binary files, open3d willed installed to make _text.ply)",
+                    "is_path": true,
+                    "is_fixed": false,
+                    "default_value": "./2D_chalaza_simulation_mash(.ply)_measure-python/ply_files"
+                }
+            ]
+        },
+        {
+            "category_name": "2D analysis",
+            "button_name": "nucellus and chalaza image analysis (image J)",
+            "carrier_path": "C:/Users/13198/2025_intern/fiji-win64/Fiji.app/ImageJ-win64.exe",
+            "script_path": "",
+            "use_global_command": false,
+            "feedback": "Better to close imageJ before Rerun ~",
+            "parameters": [
+                {
+                    "flag": "--run",
+                    "value": "2D_nucellus_and_chalaza_image(.png)_analysis-imageJ/guide_2D_nucellus_analysis.ijm",
+                    "description": "",
+                    "is_path": true,
+                    "is_fixed": true,
+                    "default_value": "2D_nucellus_and_chalaza_image(.png)_analysis-imageJ/guide_2D_nucellus_analysis.ijm"
+                }
+            ],
+            "carrier_path_check": false
+        }
+    ],
+    "3D analysis": [
+        {
+            "category_name": "3D analysis",
+            "button_name": "3D nucellus differential growth analysis",
+            "carrier_path": "python",
+            "script_path": "./3D_nucellus_differential_growth_data(.csv)_analysis-python/3D_nucellus_differential_growth_analysis.py",
+            "use_global_command": true,
+            "feedback": "scatter plot of Ratio of a nucellus posteriors / anterior saved in  3D_nucellus_differential_growth",
+            "parameters": [
+                {
+                    "flag": "",
+                    "value": "./3D_nucellus_differential_growth_data(.csv)_analysis-python/test",
+                    "description": "Input folder containing stage folders which contain sample folders, finding post.csv and ant.csv",
+                    "is_path": true,
+                    "is_fixed": false,
+                    "default_value": "./3D_nucellus_differential_growth_data(.csv)_analysis-python/test"
+                }
+            ]
+        },
+        {
+            "category_name": "3D analysis",
+            "button_name": "B epidermal cell and voulme distribution (on mid-sagittal section)",
+            "carrier_path": "python",
+            "script_path": "3D_B_epidermal_cell_distribution(.csv)_analysis-python/B_epidermal_cell_distribution.py",
+            "use_global_command": true,
+            "feedback": "images and data are saved in inputfolder/B_epidermal_cell_distribution_bin",
+            "parameters": [
+                {
+                    "flag": "--input_folder",
+                    "value": "3D_B_epidermal_cell_distribution(.csv)_analysis-python/quant_for_Aman_internship_ppt",
+                    "description": "Input folder containing stage folders which contain sample folder with data inside",
+                    "is_path": true,
+                    "is_fixed": false,
+                    "default_value": "3D_B_epidermal_cell_distribution(.csv)_analysis-python/quant_for_Aman_internship_ppt"
+                },
+                {
+                    "flag": "--markers",
+                    "value": "B_MAXMID,   B_MAXMIN,  B_COORDX, B_AREA, B_VOL",
+                    "description": "Markers to search for in csv filenames under each sample folder, e.g. B_MAXMID B_MAXMIN B_COORDX B_AREA B_VOL",
+                    "is_path": false,
+                    "is_fixed": false,
+                    "default_value": "B_MAXMID,   B_MAXMIN,  B_COORDX, B_AREA, B_VOL"
+                },
+                {
+                    "flag": "--bin",
+                    "value": "4",
+                    "description": "Number of bins for Normalized Y Coordinate on B_epidermal (default=4)",
+                    "is_path": false,
+                    "is_fixed": false,
+                    "default_value": "4"
+                }
+            ]
+        },
+        {
+            "category_name": "3D analysis",
+            "button_name": "volume distribution in posterior chalaza (on mid-sagittal section)",
+            "carrier_path": "python",
+            "script_path": "3D_posterior_chalaza_cell_distribution(.csv)_analysis-python/spatial_distribution_of_cell_volume_in_2D.py",
+            "use_global_command": true,
+            "feedback": "The operation is successful! <br> The result is at the same level as the input folder by default.",
+            "parameters": [
+                {
+                    "flag": "--input_folder",
+                    "value": "./3D_posterior_chalaza_cell_distribution(.csv)_analysis-python/all_data_2-V_epi_pos_ch",
+                    "description": "Path to the input folder containing sample folders; Click Default to import the test data path",
+                    "is_path": true,
+                    "is_fixed": false,
+                    "default_value": "./3D_posterior_chalaza_cell_distribution(.csv)_analysis-python/all_data_2-V_epi_pos_ch"
+                },
+                {
+                    "flag": "--output_folder",
+                    "value": "",
+                    "description": "Path to the output folder. Not need to fill in. Do not create a new folder in the input folder.",
+                    "is_path": true,
+                    "is_fixed": false,
+                    "default_value": ""
+                },
+                {
+                    "flag": "--csv_labels",
+                    "value": "AP,PD,vol",
+                    "description": "\"Custom labels to find csv files of x (AP, Anterior-Posterior axis),y (PD, Proximal-Distal axis) and volume. Default is using --csv_labels x,y,volume\"",
+                    "is_path": false,
+                    "is_fixed": false,
+                    "default_value": "AP,PD,vol"
+                },
+                {
+                    "flag": "--bins",
+                    "value": "5",
+                    "description": "Number of bins for both x_norm and y_norm. Default is 5",
+                    "is_path": false,
+                    "is_fixed": false,
+                    "default_value": "5"
+                },
+                {
+                    "flag": "--sample_plots",
+                    "value": "yes",
+                    "description": "Put yes to generate sample plots",
+                    "is_path": false,
+                    "is_fixed": false,
+                    "default_value": "yes"
+                }
+            ]
+        }
+    ],
+    "Ovule analysis": [
+        {
+            "category_name": "Ovule analysis",
+            "button_name": "get data using linux MorphoGraphX run python script",
+            "carrier_path": "python",
+            "script_path": "./3D_Ovule_data(.mgxm)_produce_and_analysis-python/get_volume_data.py",
+            "use_global_command": true,
+            "feedback": "If linux MorphoGraphX not working, update MorphoGraphX; when MorphoGraphX stop working, the data are in input_folder/python_export_data",
+            "parameters": [
+                {
+                    "flag": "--input_folder",
+                    "value": "./3D_Ovule_data(.mgxm)_produce_and_analysis-python/Ath_llp/2-V",
+                    "description": " Path to the folder containing .mgxm files; \\t  produce python_export_data.py, which run by MorphoGraphX later to produce data",
+                    "is_path": true,
+                    "is_fixed": false,
+                    "default_value": "./3D_Ovule_data(.mgxm)_produce_and_analysis-python/Ath_llp/2-V"
+                }
+            ]
+        },
+        {
+            "category_name": "Ovule analysis",
+            "button_name": "2nd step aggregate data",
+            "carrier_path": "python",
+            "script_path": "./3D_Ovule_data(.mgxm)_produce_and_analysis-python/aggregate_data.py",
+            "use_global_command": true,
+            "feedback": "saved in subfolders of input folder which have python_export_data folder",
+            "parameters": [
+                {
+                    "flag": "--mapping_file",
+                    "value": "./3D_Ovule_data(.mgxm)_produce_and_analysis-python/parent_label_to_name.txt",
+                    "description": "Path to parent label to name mapping file",
+                    "is_path": false,
+                    "is_fixed": true
+                },
+                {
+                    "flag": "--input_folder",
+                    "value": "./3D_Ovule_data(.mgxm)_produce_and_analysis-python",
+                    "description": "Path to folder containing the python_export_data folder containing csv files with _Area, _parent , _Volume in file name",
+                    "is_path": true,
+                    "is_fixed": false,
+                    "default_value": "./3D_Ovule_data(.mgxm)_produce_and_analysis-python"
+                },
+                {
+                    "flag": "--minium_Volume",
+                    "value": "25",
+                    "description": "Minimum cell volume threshold (μm³) for inclusion (default: 25)",
+                    "is_path": false,
+                    "is_fixed": false,
+                    "default_value": "25"
+                },
+                {
+                    "flag": "--filter",
+                    "value": "fu:1-1503S2,1-1503S4,27S1B,27S1A,21S1C,22S3A,25S2,403S1,403S3,503S1,503S3,503S4,503S5,503S6,503S7,",
+                    "description": "filter out samples when counting some incomplete tissues; e.g. abbreviation : sample ID1, sample ID2; ac: 1-1503s1A, 1-1503s1B",
+                    "is_path": false,
+                    "is_fixed": false,
+                    "default_value": "fu:1-1503S2,1-1503S4,27S1B,27S1A,21S1C,22S3A,25S2,403S1,403S3,503S1,503S3,503S4,503S5,503S6,503S7,"
+                }
+            ]
+        },
+        {
+            "category_name": "Ovule analysis",
+            "button_name": "3rd step compare and plot data",
+            "carrier_path": "python",
+            "script_path": "./3D_Ovule_data(.mgxm)_produce_and_analysis-python/compare_and_plot.py",
+            "use_global_command": true,
+            "feedback": "saved in your input folder1/python_export_data_compared/Source1_vs_Source2",
+            "parameters": [
+                {
+                    "flag": "--folder1",
+                    "value": "3D_Ovule_data(.mgxm)_produce_and_analysis-python/Ath_llp/WT_2-V",
+                    "description": "this folder contains python_export_data_aggregated folder",
+                    "is_path": true,
+                    "is_fixed": false,
+                    "default_value": "3D_Ovule_data(.mgxm)_produce_and_analysis-python/Ath_llp/WT_2-V"
+                },
+                {
+                    "flag": "--folder2",
+                    "value": "3D_Ovule_data(.mgxm)_produce_and_analysis-python/Ath_llp/2-V",
+                    "description": "this folder contains python_export_data_aggregated folder",
+                    "is_path": true,
+                    "is_fixed": false,
+                    "default_value": "3D_Ovule_data(.mgxm)_produce_and_analysis-python/Ath_llp/2-V"
+                },
+                {
+                    "flag": "--output_folder",
+                    "value": "",
+                    "description": "Output directory path (default: folder1/python_export_data_compared/Source1_vs_Source2)",
+                    "is_path": false,
+                    "is_fixed": false,
+                    "default_value": ""
+                },
+                {
+                    "flag": "--filter",
+                    "value": "",
+                    "description": "filter out given sample IDs, e.g. ID1,ID2",
+                    "is_path": false,
+                    "is_fixed": false,
+                    "default_value": ""
+                }
+            ]
+        }
+    ]
+}

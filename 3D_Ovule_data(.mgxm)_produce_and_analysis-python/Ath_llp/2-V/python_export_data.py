@@ -1,0 +1,6 @@
+Process.Mesh__System__Load('C:\Users\13198\2025_intern\ovule_analysis_tool\3D_Ovule_data(.mgxm)_produce_and_analysis-python\Ath_llp\2-V\1-1503s1A.mgxm', 'no', 'no', '0')
+Process.Mesh__Selection__Select_All()
+Process.Mesh__Heat_Map__Heat_Map_Classic('Area', 'Geometry', 'python_export_data/1-1503s1A_Area.csv', 'Geometry', 'No', '0', '65535', 'Yes', 'Yes', 'None', 'No', 'Increasing', 'Ratio', '.001', '1.0')
+Process.Mesh__Heat_Map__Heat_Map_Classic('Volume', 'Geometry', 'python_export_data/1-1503s1A_Volume.csv', 'Geometry', 'No', '0', '65535', 'Yes', 'Yes', 'None', 'No', 'Increasing', 'Ratio', '.001', '1.0')
+Process.Mesh__Lineage_Tracking__Save_Parents('python_export_data/1-1503s1A_parent', 'Yes')
+Process.Mesh__System__Reset('0')

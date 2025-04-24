@@ -1,0 +1,11 @@
+Parent Label	name	abbreviation
+1	outer integument 2	oi2
+2	outer integument 1	oi1
+3	inner integument 2	ii2
+4	inner integument 1	ii1
+14	inner integument 1`	ii1`
+5	nucellus	nu
+8	megaspore mother cell	es
+10	Anterior chalaza	ac
+6	Posterior chalaza	pc
+7	funiculus	fu

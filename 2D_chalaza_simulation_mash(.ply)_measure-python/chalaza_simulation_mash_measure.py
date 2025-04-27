@@ -225,14 +225,16 @@ def plot_smoothed_curve(x, y, extreme_points, sharpest_turn_idx, order, pos_path
 
 
 def main():
-    if len(sys.argv) < 1 or len(sys.argv) > 2:
-        print("python chalaza_simulation_mash_measure.py <folder_path>")
+    if len(sys.argv) < 1 or len(sys.argv) > 3:
+        print("python chalaza_simulation_mash_measure.py <folder_path> <ino_mutant>")
         #
         sys.exit(1)
 
     directory = sys.argv[1] # input folder
     output_folder = os.path.join(directory, "simulation_mash_kink_angle_measure")
     os.makedirs(output_folder, exist_ok=True)
+
+    ino_mutant = sys.argv[2]
 
     ant_path_lengths = []
     pos_path_lengths = []
@@ -268,6 +270,9 @@ def main():
 
             # xmin_ymax_idx is up tip of anterior line; it should be always the leftmost (and then highest) point because of chalaza can grow freely on anterior side.
             xmin_ymax_idx = min([i for i, val in enumerate(x) if val == min(x)], key=lambda i: y[i])
+            # for ino mutant, this end point of chalaza is on ymax_xmin
+            if ino_mutant.strip().upper() == 'YES':
+                xmin_ymax_idx = min([i for i, val in enumerate(y) if val == max(y)], key=lambda i: x[i])
 
             # Find point on the mid of posterior line; which should has y value between 0.2 and 0.4 and find the rightmost point in that range.
             # the sharpest turn should be between xmin_ymax and xmax_in_range

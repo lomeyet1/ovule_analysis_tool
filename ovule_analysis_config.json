@@ -11,11 +11,19 @@
             "parameters": [
                 {
                     "flag": "",
-                    "value": "./2D_chalaza_simulation_mash(.ply)_measure-python/ply_files",
+                    "value": "./2D_chalaza_simulation_mash(.ply)_measure-python/ino",
                     "description": "input folder conatins .ply file (if they are binary files, open3d willed installed to make _text.ply)",
                     "is_path": true,
                     "is_fixed": false,
                     "default_value": "./2D_chalaza_simulation_mash(.ply)_measure-python/ply_files"
+                },
+                {
+                    "flag": "",
+                    "value": "yes",
+                    "description": "input yes for ino mutant or other mutant with left up end point is the ymax ponit instead xmin point",
+                    "is_path": false,
+                    "is_fixed": false,
+                    "default_value": "NO"
                 }
             ]
         },
